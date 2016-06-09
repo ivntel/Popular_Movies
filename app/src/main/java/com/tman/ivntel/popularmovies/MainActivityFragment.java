@@ -107,7 +107,6 @@ public class MainActivityFragment extends Fragment {
                 break;
 
             case R.id.favorites:
-                Toast.makeText(getActivity(), "favorites", Toast.LENGTH_SHORT).show();
                 //load sharedpref
                 Gson gson = new Gson();
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
@@ -115,8 +114,14 @@ public class MainActivityFragment extends Fragment {
                 Type type = new TypeToken<List<Movie>>(){}.getType();
                 List<Movie> objects = gson.fromJson(savedList, type);
 
-                mMovieGridAdapter.updateData(objects);
-                break;
+                if(objects == null){
+                    Toast.makeText(getActivity(), "Nothing saved in favorites", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getActivity(), "favorites", Toast.LENGTH_SHORT).show();
+                    mMovieGridAdapter.updateData(objects);
+                    break;
+                }
         }
         return super.onOptionsItemSelected(item);
     }

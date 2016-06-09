@@ -19,6 +19,7 @@
                 android:id="@+id/detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:background="#e956c39c"
                 android:textSize="40dp"
                 android:textColor="#ffffff" />
@@ -26,23 +27,27 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/detail_image"
-                android:layout_width="300dp"
+                android:layout_width="340dp"
                 android:layout_height="300dp"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:paddingLeft="5dp"/>
+                android:paddingRight="100dp"/>
             <Button
-                android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="MARK AS FAVORITE"
                 android:id="@+id/favorite"
-                android:textSize="8dp"
-                android:layout_toRightOf="@id/detail_image" />
+                android:textSize="10dp"
+                android:layout_marginRight="19dp"
+                android:layout_alignRight="@+id/detail_image"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true" />
 
         </RelativeLayout>
 
@@ -68,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
-b
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

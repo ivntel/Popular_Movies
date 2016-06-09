@@ -9,6 +9,9 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -130,6 +133,20 @@ public class DetailActivityFragment extends Fragment {
 
         return rootView;
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        inflater.inflate(R.menu.menu_detail, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent = new Intent(this.getActivity(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
     public void getReviews() {
         RestClient.getMovieApi().getReviews(mMovie.getIDnum(), new Callback<ReviewResponse>() {
 

@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name="com.tman.ivntel.popularmovies.DetailActivity"
-            android:label="MovieGuide" >
+            android:label="Movie Details" >
         </activity>
     </application>
 
